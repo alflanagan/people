@@ -13,7 +13,7 @@
 1. Should be extremely flexible, allowing for unusual situations, without allowing common data errors you see in other
    apps.
 
-1 Track relationships between people (child, spouse, co-worker) and organizations (works for, member of).
+1. Track relationships between people (child, spouse, co-worker) and organizations (works for, member of).
 
 1. Should be usable on desktop computers, tablets, and phones at a minimum. Currently it's expected to be a web app, not
    native, but this is not a goal.
