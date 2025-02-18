@@ -1,0 +1,6 @@
+django
+psycopg
+django-htmx
+
+# web server
+gunicorn

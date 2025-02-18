@@ -1,0 +1,26 @@
+---
+services:
+  django:
+    build:
+      context: .
+    volumes:
+      - ./app:/app:delegated
+    environment:
+      DATABASE_URL: postgres://people:development@postgres:5432/people
+    ports:
+      - "8080:8080"
+    command: /app/.venv/bin/gunicorn
+
+  postgres:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: people
+      POSTGRES_PASSWORD: development
+      POSTGRES_DB: people
+      POSTGRES_HOST_AUTH_METHOD: md5
+      POSTGRES_INITDB_ARGS: --auth-host=md5
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+volumes:
+  dbdata:
