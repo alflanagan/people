@@ -1,6 +1,7 @@
 django
 psycopg
 django-htmx
+django-environ
 
 # web server
 gunicorn
