@@ -1,5 +1,15 @@
+# compiled python
 __pycache__
+
+# local virtual environment
 .venv/
+
+# odd MacOS file
 .DS_Store
+
+# local test/dev data
 TestData/
 db.sqlite3
+
+# secrets file
+.env
