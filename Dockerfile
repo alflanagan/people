@@ -27,7 +27,9 @@ WORKDIR /app
 # Install the project requirements.
 COPY app/Makefile app/requirements.txt /app/
 
-RUN python -m venv .venv
+RUN make setup
 
 # Copy the source code of the project into the container.
 COPY app /app/
+
+WORKDIR /app/people
