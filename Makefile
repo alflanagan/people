@@ -12,8 +12,10 @@ start:
 dev:
 	docker exec -it django bash
 
+#TODO: add a task to create the virtual environment
+
 requirements:
-	cd app && $(PIP_COMPILE) requirements.in
+	cd app && . .venv/bin/activate && $(PIP_COMPILE) requirements.in
 
 # this makes up for the fact that make has no command to show what tasks are defined
 # no attempt was made at a universal solution; you'll need to enhance for any but most basic case
