@@ -14,12 +14,8 @@ RUN apt-get update --yes --quiet \
 # Port used by this container to serve HTTP.
 EXPOSE 8080
 
-# Set environment variables.
-# 1. Force Python stdout and stderr streams to be unbuffered.
-# 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
-#    command.
-ENV PYTHONUNBUFFERED=1 \
-  PORT=8080
+# Force Python stdout and stderr streams to be unbuffered.
+ENV PYTHONUNBUFFERED=1
 
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
@@ -30,6 +26,4 @@ COPY app/Makefile app/requirements.txt /app/
 RUN make setup
 
 # Copy the source code of the project into the container.
-COPY app /app/
-
-WORKDIR /app/people
+COPY app .

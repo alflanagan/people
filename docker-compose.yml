@@ -9,7 +9,11 @@ services:
       DATABASE_URL: postgres://people:development@postgres:5432/people
     ports:
       - "8080:8080"
-    command: /app/.venv/bin/gunicorn
+    command: make server
+
+  # context:
+  #   build:
+  #     context: .
 
   postgres:
     image: postgres:alpine
