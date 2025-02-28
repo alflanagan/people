@@ -1,7 +1,9 @@
 django
-psycopg
+# for now, SQLite is fine
+# psycopg
 django-htmx
 django-environ
 
 # web server
-gunicorn
+# and so is django's dev server
+# gunicorn
