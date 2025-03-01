@@ -16,3 +16,6 @@ class Address(models.Model):
     # make this a ChoiceField?
     state = models.CharField(max_length=2)
     postal_code = models.CharField(max_length=10) # ZIP: 5 digits + dash + 4 digits
+
+    class Meta:
+        verbose_name_plural = "Addresses"
