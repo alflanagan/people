@@ -10,6 +10,11 @@ class Person(models.Model):
     first_contact = models.DateField(db_default=Now(), blank=True)
     addresses = models.ManyToManyField(Address, through="PersonAddress")
 
+    class Meta:
+        verbose_name_plural = "People"
+
+    def __str__(self):
+        return self.name
 
 class PersonAddress(models.Model):
     """
@@ -22,6 +27,13 @@ class PersonAddress(models.Model):
     address = models.ForeignKey("address.address", on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ["person", "address"]
+        verbose_name_plural = "Person addresses"
+
+    def __str__(self):
+        return f"{self.person.name}'s {self.label} address"
+
 class PersonPhone(models.Model):
     """
     PersonPhone associates a labeled phone number with a person.
@@ -31,3 +43,10 @@ class PersonPhone(models.Model):
     # TODO: add phonenumbers package for better phone number handling
     phone = models.CharField(max_length=255)
     created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ["person", "phone"]
+        verbose_name_plural = "Person phone numbers"
+
+    def __str__(self):
+        return f"{self.person.name}'s {self.label} phone number"
