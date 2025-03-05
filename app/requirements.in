@@ -1,9 +1,11 @@
 django
 # for now, SQLite is fine
+# and so is django's dev server
+# gunicorn
 # psycopg
 django-htmx
 django-environ
 
-# web server
-# and so is django's dev server
-# gunicorn
+djangorestframework
+markdown       # Markdown support for the browsable API.
+django-filter  # Filtering support
