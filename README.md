@@ -22,3 +22,7 @@
 
 1. Allow for free-form notes and journal entries, as well as the standard fields, so that a variety of custom uses are
    possible.
+
+### Current Status
+
+Pre-pre-pre-alpha. Just some basic models for some ideas I have.
