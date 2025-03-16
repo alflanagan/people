@@ -4,8 +4,7 @@
 
 ### Project Goals
 
-1. Track people you encounter any way you do, whether through a phone call, e-mail, business card, and that girl you
-   went to kindergarten with.
+1. Track people you encounter any way you want.
 
 1. Web/cloud storage for maximum portability, but user can store locally, on their own cloud service, or on a hosted
    service. User data should be easily exported to a number of formats and never locked in to one service.
