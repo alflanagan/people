@@ -20,10 +20,11 @@ ENV PYTHONUNBUFFERED=1
 # Use /app folder as a directory where the source code is stored.
 WORKDIR /app
 
-# Install the project requirements.
-COPY app/Makefile app/requirements.txt /app/
-
-RUN make setup
-
 # Copy the source code of the project into the container.
 COPY app .
+
+WORKDIR /app/people
+
+# RUN python -m pip --no-cache-dir install uv==0.5.8 && uv sync --no-cache --no-dev --locked --no-progress
+
+# WORKDIR /app

@@ -1,11 +1,11 @@
+# Commands which execute in the docker container for the People app API.
+
 setup:
-	python -m venv /.venv
-	. /.venv/bin/activate \
-    && pip install --no-cache-dir wheel pip-tools \
-    && pip-sync
+	python -m pip install uv
+	uv sync
 
 django:
-	cd people && /.venv/bin/python manage.py shell
+	cd people && uv run manage.py shell
 
 server:
-	/.venv/bin/python /app/people/manage.py runserver 0.0.0.0:8080
+	cd people && uv run manage.py runserver 0.0.0.0:8080
