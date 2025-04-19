@@ -4,7 +4,7 @@ min_version = "2024.9.5"
 _.path = ['{{config_root}}/node_modules/.bin']
 
 # probably should set this up as external variable before deploy
-NODE_VERSION = "22.14"
+NODE_VERSION = "20.19"
 
 # Use the project name derived from the current directory
 PROJECT_NAME = "{{ config_root | basename }}"
