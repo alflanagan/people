@@ -22,30 +22,20 @@ node = "{{ env['NODE_VERSION'] | default(value='lts') }}"
 "npm:typescript" = "latest"
 "npm:@angular/cli" = "latest"
 
-[tasks.install]
-alias = "i"
-description = "Install npm dependencies"
-run = "npm install"
-
 [tasks.start]
 alias = "s"
 description = "Start the development server"
-run = "npm run start"
-
-[tasks.lint]
-alias = "l"
-description = "Run ESLint"
-run = "eslint src/"
+run = "cd people && npm start"
 
 [tasks.test]
 description = "Run tests"
 alias = "t"
-run = "jest"
+run = "cd people && npm test"
 
 [tasks.build]
 description = "Build the project"
 alias = "b"
-run = "npm run build"
+run = "cd people && npm run build"
 
 [tasks.info]
 description = "Print project information"
