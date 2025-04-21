@@ -3,43 +3,39 @@ min_version = "2024.9.5"
 [env]
 _.path = ['{{config_root}}/node_modules/.bin']
 
-# probably should set this up as external variable before deploy
-NODE_VERSION = "20.19"
-
 # Use the project name derived from the current directory
 PROJECT_NAME = "{{ config_root | basename }}"
 
 # Set up the path for node module binaries
 BIN_PATH = "{{ config_root }}/node_modules/.bin"
 
-NODE_ENV = "{{ env.NODE_ENV | default(value='development') }}"
-
 [tools]
 # Install Node.js using the specified version
-node = "{{ env['NODE_VERSION'] | default(value='lts') }}"
+node = "20"
 
 # Install some npm packages globally if needed
 "npm:typescript" = "latest"
 "npm:@angular/cli" = "latest"
+qdns = "latest"
 
 [tasks.start]
 alias = "s"
 description = "Start the development server"
-run = "cd people && npm start"
+run = "yarn start"
 
 [tasks.test]
 description = "Run tests"
 alias = "t"
-run = "cd people && npm test"
+run = "yarn test"
 
 [tasks.build]
 description = "Build the project"
 alias = "b"
-run = "cd people && npm run build"
+run = "yarn build"
 
 [tasks.info]
 description = "Print project information"
 run = '''
 echo "Project: $PROJECT_NAME"
-echo "NODE_ENV: $NODE_ENV"
+echo "node: $(node --version)"
 '''
