@@ -12,6 +12,7 @@ class Person(models.Model):
 
     class Meta:
         verbose_name_plural = "People"
+        ordering = ["name", "first_contact"]
 
     def __str__(self):
         return self.name
