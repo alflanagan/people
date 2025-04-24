@@ -1,4 +1,3 @@
-from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APITestCase, APIClient
 from rest_framework import status
@@ -107,7 +106,7 @@ class PersonViewSetTests(APITestCase):
             first_contact=datetime.date.today()
         )
 
-        url = f"{self.list_url}?name=John"
+        url = f"{self.list_url}?name=John%20Doe"
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(len(response.data['results']), 1)
